@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-secondary-container": "#00714d", "outline-variant": "#bfc9bf", "on-tertiary-container": "#a7c2ff", "primary": "#004225", "surface-bright": "#f7faf4", "secondary-container": "#6cf8bb", "secondary-fixed": "#6ffbbe", "surface-container-highest": "#e0e3de", "inverse-surface": "#2d312e", "surface-dim": "#d8dbd5", "surface-container-high": "#e6e9e3", "tertiary": "#00367a", "secondary-fixed-dim": "#4edea3", "on-error": "#ffffff", "on-secondary-fixed-variant": "#005236", "tertiary-container": "#004ca6", "on-primary-fixed-variant": "#00522e", "on-primary": "#ffffff", "primary-fixed": "#a8f3c1", "on-secondary-fixed": "#002113", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004395", "on-surface-variant": "#404941", "on-surface": "#181d19", "surface-container-low": "#f1f5ef", "outline": "#707a71", "on-tertiary-fixed": "#001a42", "on-primary-fixed": "#002110", "on-error-container": "#93000a", "surface-tint": "#216b43", "inverse-primary": "#8dd6a6", "inverse-on-surface": "#eef2ec", "error-container": "#ffdad6", "tertiary-fixed": "#d8e2ff", "on-background": "#181d19", "secondary": "#006c49", "surface-container": "#ecefe9", "tertiary-fixed-dim": "#adc6ff", "background": "#f7faf4", "primary-container": "#0a5c36", "primary-fixed-dim": "#8dd6a6", "on-primary-container": "#89d2a2", "surface-variant": "#e0e3de", "surface-container-lowest": "#ffffff", "surface": "#f7faf4"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-xs": "4px", "space-2xl": "48px", "space-md": "16px", "space-sm": "8px", "gutter": "24px", "space-lg": "24px", "margin": "32px", "space-xl": "32px"}, "fontFamily": {"headline-lg": ["Inter"], "body-sm": ["Inter"], "label-lg": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"], "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"]}, "fontSize": {"headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600"}], "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-space-xl pb-space-2xl"><div class="px-gutter mb-space-xl flex items-center gap-3"><img alt="ExpenseTracker Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB-5y_HebDI44DdgQDeEb_Zs4arviwps35pPXyYjYyX8bR2d6l5jtQ8eVwC2WV7wfB0rMiLIcvS30u35fkwl9v_rjiDnLZ67WdYH7lmYrDfAJmfy6i3BMIe3k1sfP0klEX-iZ5yFdUVMuB0uBLF_LdA8EljrtI1nbl5LZK4L09wg2Q1Vafiw8lqF20ItxecJfCbofkxjOc9aO6sG76uSr4Ce2JXqS0KICbqea-qPA"/><span class="font-headline-md text-primary">ExpenseTracker</span></div><nav class="flex-1 px-space-md space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-medium rounded-lg" data-path="add-income" href="#"><span class="material-symbols-outlined mr-space-md">add_circle</span>Add Income</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="add-expenses" href="#"><span class="material-symbols-outlined mr-space-md">remove_circle</span>Add Expenses</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="transaction-history" href="#"><span class="material-symbols-outlined mr-space-md">receipt_long</span>Transaction History</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="budget-planner" href="#"><span class="material-symbols-outlined mr-space-md">pie_chart</span>Budget Planner</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reports" href="#"><span class="material-symbols-outlined mr-space-md">analytics</span>Reports</a></nav></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-lg text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span><span>Net Worth: <strong>$124,500</strong></span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">trending_up</span><span>Monthly Savings: <strong>$3,200</strong></span></div></div><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">notifications</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen px-gutter py-space-xl"><div class="flex flex-col w-full max-w-7xl mx-auto space-y-space-xl pb-24">
+<!-- Top Asymmetric Section: Overview & Banner -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-stretch">
+<!-- Left Intro / Title block -->
+<div class="lg:col-span-8 bg-surface-container-low rounded-xl p-space-xl flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute -right-16 -top-16 w-64 h-64 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none"></div>
+<div>
+<div class="flex items-center gap-space-sm text-primary font-label-md uppercase tracking-wider mb-space-xs">
+<span class="material-symbols-outlined text-[16px]">add_circle</span>
+          Financial Inflow Management
+        </div>
+<h1 class="font-headline-lg text-on-surface text-3xl mb-space-sm">Record New Income</h1>
+<p class="font-body-md text-on-surface-variant max-w-xl">
+          Log your earnings effortlessly. Categorize salary, freelance gigs, investment returns, or gifts to keep your net worth and cash flow analytics razor sharp.
+        </p>
+</div>
+<div class="flex flex-wrap gap-space-md mt-space-xl pt-space-md border-t border-surface-container-highest/40">
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-md">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+<div>
+<div class="font-label-sm text-on-surface-variant">Auto-Categorized</div>
+<div class="font-body-sm text-on-surface font-medium">Instant Ledger Sync</div>
+</div>
+</div>
+<div class="flex items-center gap-space-sm">
+<div class="w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-md">
+<span class="material-symbols-outlined text-[18px]">savings</span>
+</div>
+<div>
+<div class="font-label-sm text-on-surface-variant">Savings Rate</div>
+<div class="font-body-sm text-on-surface font-medium">+28.4% this month</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Quick Metric Card -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-space-xl flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="absolute right-0 bottom-0 translate-x-8 translate-y-8 w-48 h-48 bg-primary-container rounded-full blur-2xl opacity-50 pointer-events-none"></div>
+<div>
+<div class="flex justify-between items-center mb-space-md">
+<span class="font-label-md text-primary-fixed uppercase tracking-wider">Total Inflows (MTD)</span>
+<span class="material-symbols-outlined text-primary-fixed">trending_up</span>
+</div>
+<div class="font-display-lg text-on-primary mb-space-xs" id="total-income-display">$8,450.00</div>
+<div class="font-body-sm text-primary-fixed flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span>
+<span>+12.3% from previous month</span>
+</div>
+</div>
+<div class="mt-space-xl pt-space-md border-t border-primary-fixed/20 flex justify-between items-center font-body-sm text-primary-fixed">
+<span>Entries logged this month</span>
+<span class="font-headline-sm text-on-primary" id="entry-count-badge">4 items</span>
+</div>
+</div>
+</div>
+<!-- Main Content Grid: Form & Recent Entries -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-start">
+<!-- Left Form Column (7 cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-2xl shadow-sm relative">
+<!-- Success Notification Toast (hidden by default) -->
+<div class="hidden mb-space-lg p-space-md bg-secondary-container text-on-secondary-container rounded-lg flex items-center justify-between transition-all duration-300" id="success-toast">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-on-secondary-container">check_circle</span>
+<span class="font-label-lg font-medium">Income successfully recorded and synced!</span>
+</div>
+<button class="text-on-secondary-container hover:opacity-70" onclick="dismissToast()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<form class="space-y-space-lg" id="income-form" onsubmit="handleIncomeSubmit(event)">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-lg">
+<!-- Amount Field -->
+<div class="space-y-space-xs">
+<label class="block font-label-md text-on-surface" for="income-amount">Amount ($) *</label>
+<div class="relative">
+<span class="absolute inset-y-0 left-0 pl-space-md flex items-center pointer-events-none text-on-surface-variant font-headline-sm">$</span>
+<input class="w-full pl-8 pr-space-md py-3 bg-surface-container-low text-on-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all font-headline-sm" id="income-amount" min="0.01" placeholder="0.00" required="" step="0.01" type="number"/>
+</div>
+</div>
+<!-- Date Field -->
+<div class="space-y-space-xs">
+<label class="block font-label-md text-on-surface" for="income-date">Date *</label>
+<div class="relative">
+<input class="w-full px-space-md py-3 bg-surface-container-low text-on-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all font-body-md" id="income-date" required="" type="date"/>
+</div>
+</div>
+</div>
+<!-- Source / Category Selection -->
+<div class="space-y-space-xs">
+<label class="block font-label-md text-on-surface">Source / Category *</label>
+<div class="grid grid-cols-2 sm:grid-cols-5 gap-space-sm" id="category-selector">
+<label class="cursor-pointer">
+<input checked="" class="peer sr-only" name="category" type="radio" value="Salary"/>
+<div class="p-space-md rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-on-surface text-center transition-all hover:bg-surface-container-high flex flex-col items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+<span class="font-label-md">Salary</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="category" type="radio" value="Freelance"/>
+<div class="p-space-md rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-on-surface text-center transition-all hover:bg-surface-container-high flex flex-col items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">laptop_mac</span>
+<span class="font-label-md">Freelance</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="category" type="radio" value="Investment"/>
+<div class="p-space-md rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-on-surface text-center transition-all hover:bg-surface-container-high flex flex-col items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+<span class="font-label-md">Investment</span>
+</div>
+</label>
+<label class="cursor-pointer">
+<input class="peer sr-only" name="category" type="radio" value="Gift"/>
+<div class="p-space-md rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-on-surface text-center transition-all hover:bg-surface-container-high flex flex-col items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">card_giftcard</span>
+<span class="font-label-md">Gift</span>
+</div>
+</label>
+<label class="cursor-pointer col-span-2 sm:col-span-1">
+<input class="peer sr-only" name="category" type="radio" value="Other"/>
+<div class="p-space-md rounded-lg bg-surface-container-low peer-checked:bg-primary peer-checked:text-on-primary text-on-surface text-center transition-all hover:bg-surface-container-high flex flex-col items-center gap-space-xs">
+<span class="material-symbols-outlined text-[20px]">category</span>
+<span class="font-label-md">Other</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Optional Notes -->
+<div class="space-y-space-xs">
+<label class="block font-label-md text-on-surface" for="income-notes">Optional Notes</label>
+<textarea class="w-full px-space-md py-3 bg-surface-container-low text-on-surface rounded-lg focus:outline-none focus:ring-2 focus:ring-primary transition-all font-body-md resize-none" id="income-notes" placeholder="Add description, client name, or transaction reference..." rows="3"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="flex items-center justify-end pt-space-md">
+<button class="w-full sm:w-auto px-space-2xl py-3 bg-primary text-on-primary font-label-lg rounded-lg hover:bg-primary-container transition-all flex items-center justify-center gap-space-sm shadow-md" type="submit">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            Save Income Entry
+          </button>
+</div>
+</form>
+</div>
+<!-- Right Column: Recent Income List & Quick Stats (5 cols) -->
+<div class="lg:col-span-5 space-y-space-lg">
+<div class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<div class="flex justify-between items-center mb-space-lg">
+<h2 class="font-headline-sm text-on-surface flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary">history</span>
+            Recent Incomes
+          </h2>
+<button class="text-body-sm text-error hover:underline flex items-center gap-1" onclick="clearAllIncomes()">
+<span class="material-symbols-outlined text-[14px]">delete_sweep</span> Clear
+          </button>
+</div>
+<!-- Income Entries List Container -->
+<div class="space-y-space-md max-h-[460px] overflow-y-auto pr-space-xs" id="income-list">
+<!-- Dynamically populated via JS -->
+</div>
+<!-- Empty State -->
+<div class="hidden text-center py-space-2xl" id="empty-state">
+<span class="material-symbols-outlined text-4xl text-outline-variant mb-space-sm">receipt_long</span>
+<p class="font-body-md text-on-surface-variant">No income records found yet. Use the form to add your first entry.</p>
+</div>
+</div>
+<!-- Quick Breakdown Banner -->
+<div class="bg-surface-container-low rounded-xl p-space-lg flex items-center justify-between">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined">pie_chart</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">Top Category</div>
+<div class="font-body-sm text-on-surface-variant" id="top-category-name">Salary (75%)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">chevron_right</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Default dummy entries if localStorage is empty
+  const defaultIncomes = [
+    { id: '1', amount: 5200.00, category: 'Salary', date: '2025-05-01', notes: 'Monthly corporate payroll' },
+    { id: '2', amount: 1450.00, category: 'Freelance', date: '2025-05-10', notes: 'UI/UX Redesign project milestone' },
+    { id: '3', amount: 800.00, category: 'Investment', date: '2025-05-14', notes: 'Quarterly dividend payout' },
+    { id: '4', amount: 300.00, category: 'Gift', date: '2025-05-18', notes: 'Birthday celebration gift' }
+  ];
+
+  function getStoredIncomes() {
+    const stored = localStorage.getItem('tracker_incomes');
+    if (!stored) {
+      localStorage.setItem('tracker_incomes', JSON.stringify(defaultIncomes));
+      return defaultIncomes;
+    }
+    return JSON.parse(stored);
+  }
+
+  function saveStoredIncomes(incomes) {
+    localStorage.setItem('tracker_incomes', JSON.stringify(incomes));
+  }
+
+  function renderIncomes() {
+    const incomes = getStoredIncomes();
+    const listContainer = document.getElementById('income-list');
+    const emptyState = document.getElementById('empty-state');
+    const totalDisplay = document.getElementById('total-income-display');
+    const entryCountBadge = document.getElementById('entry-count-badge');
+    const topCategoryName = document.getElementById('top-category-name');
+
+    listContainer.innerHTML = '';
+
+    if (incomes.length === 0) {
+      emptyState.classList.remove('hidden');
+      totalDisplay.textContent = '$0.00';
+      entryCountBadge.textContent = '0 items';
+      topCategoryName.textContent = 'None yet';
+      return;
+    }
+
+    emptyState.classList.add('hidden');
+
+    // Calculate total
+    const total = incomes.reduce((sum, item) => sum + parseFloat(item.amount), 0);
+    totalDisplay.textContent = '$' + total.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    entryCountBadge.textContent = incomes.length + (incomes.length === 1 ? ' item' : ' items');
+
+    // Calculate top category
+    const catCounts = {};
+    incomes.forEach(item => {
+      catCounts[item.category] = (catCounts[item.category] || 0) + parseFloat(item.amount);
+    });
+    let topCat = 'Salary';
+    let maxAmt = 0;
+    for (const [cat, amt] of Object.entries(catCounts)) {
+      if (amt > maxAmt) {
+        maxAmt = amt;
+        topCat = cat;
+      }
+    }
+    const topCatPct = Math.round((maxAmt / total) * 100) || 0;
+    topCategoryName.textContent = `${topCat} (${topCatPct}%)`;
+
+    // Render list items (sorted newest first by date/id)
+    const sorted = [...incomes].reverse();
+    sorted.forEach((item) => {
+      const iconMap = {
+        'Salary': 'payments',
+        'Freelance': 'laptop_mac',
+        'Investment': 'trending_up',
+        'Gift': 'card_giftcard',
+        'Other': 'category'
+      };
+
+      const itemEl = document.createElement('div');
+      itemEl.className = 'flex items-center justify-between p-space-md bg-surface-container-low rounded-xl hover:bg-surface-container transition-all group';
+      itemEl.innerHTML = `
+        <div class="flex items-center gap-space-md">
+          <div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+            <span class="material-symbols-outlined text-[20px]">${iconMap[item.category] || 'paid'}</span>
+          </div>
+          <div>
+            <div class="font-headline-sm text-on-surface flex items-center gap-2">
+              <span>${item.category}</span>
+              <span class="font-body-sm text-on-surface-variant font-normal">• ${item.date}</span>
+            </div>
+            <div class="font-body-sm text-on-surface-variant truncate max-w-[200px] sm:max-w-xs">${item.notes || 'No description provided'}</div>
+          </div>
+        </div>
+        <div class="flex items-center gap-space-md">
+          <span class="font-headline-sm text-primary">+$${parseFloat(item.amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</span>
+          <button onclick="deleteIncome('${item.id}')" class="opacity-0 group-hover:opacity-100 text-on-surface-variant hover:text-error transition-all p-1">
+            <span class="material-symbols-outlined text-[18px]">delete</span>
+          </button>
+        </div>
+      `;
+      listContainer.appendChild(itemEl);
+    });
+  }
+
+  function handleIncomeSubmit(e) {
+    e.preventDefault();
+    const amount = document.getElementById('income-amount').value;
+    const date = document.getElementById('income-date').value;
+    const categoryEl = document.querySelector('input[name="category"]:checked');
+    const category = categoryEl ? categoryEl.value : 'Salary';
+    const notes = document.getElementById('income-notes').value;
+
+    const newEntry = {
+      id: Date.now().toString(),
+      amount: parseFloat(amount),
+      category,
+      date,
+      notes
+    };
+
+    const incomes = getStoredIncomes();
+    incomes.push(newEntry);
+    saveStoredIncomes(incomes);
+
+    // Reset form
+    document.getElementById('income-form').reset();
+    document.getElementById('income-date').valueAsDate = new Date();
+
+    // Show success toast
+    const toast = document.getElementById('success-toast');
+    toast.classList.remove('hidden');
+
+    renderIncomes();
+  }
+
+  function dismissToast() {
+    document.getElementById('success-toast').classList.add('hidden');
+  }
+
+  function deleteIncome(id) {
+    let incomes = getStoredIncomes();
+    incomes = incomes.filter(item => item.id !== id);
+    saveStoredIncomes(incomes);
+    renderIncomes();
+  }
+
+  function clearAllIncomes() {
+    if (confirm('Are you sure you want to clear all income entries?')) {
+      localStorage.removeItem('tracker_incomes');
+      renderIncomes();
+    }
+  }
+
+  // Set default date to today on load
+  document.addEventListener('DOMContentLoaded', () => {
+    const dateInput = document.getElementById('income-date');
+    if (dateInput && !dateInput.value) {
+      dateInput.valueAsDate = new Date();
+    }
+    renderIncomes();
+  });
+</script></main></div></body></html>

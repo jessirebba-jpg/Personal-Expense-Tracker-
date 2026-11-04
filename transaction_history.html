@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {darkMode: "class",theme: {extend: {"colors": {"on-tertiary": "#ffffff", "on-secondary": "#ffffff", "on-secondary-container": "#00714d", "outline-variant": "#bfc9bf", "on-tertiary-container": "#a7c2ff", "primary": "#004225", "surface-bright": "#f7faf4", "secondary-container": "#6cf8bb", "secondary-fixed": "#6ffbbe", "surface-container-highest": "#e0e3de", "inverse-surface": "#2d312e", "surface-dim": "#d8dbd5", "surface-container-high": "#e6e9e3", "tertiary": "#00367a", "secondary-fixed-dim": "#4edea3", "on-error": "#ffffff", "on-secondary-fixed-variant": "#005236", "tertiary-container": "#004ca6", "on-primary-fixed-variant": "#00522e", "on-primary": "#ffffff", "primary-fixed": "#a8f3c1", "on-secondary-fixed": "#002113", "error": "#ba1a1a", "on-tertiary-fixed-variant": "#004395", "on-surface-variant": "#404941", "on-surface": "#181d19", "surface-container-low": "#f1f5ef", "outline": "#707a71", "on-tertiary-fixed": "#001a42", "on-primary-fixed": "#002110", "on-error-container": "#93000a", "surface-tint": "#216b43", "inverse-primary": "#8dd6a6", "inverse-on-surface": "#eef2ec", "error-container": "#ffdad6", "tertiary-fixed": "#d8e2ff", "on-background": "#181d19", "secondary": "#006c49", "surface-container": "#ecefe9", "tertiary-fixed-dim": "#adc6ff", "background": "#f7faf4", "primary-container": "#0a5c36", "primary-fixed-dim": "#8dd6a6", "on-primary-container": "#89d2a2", "surface-variant": "#e0e3de", "surface-container-lowest": "#ffffff", "surface": "#f7faf4"}, "borderRadius": {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"}, "spacing": {"space-xs": "4px", "space-2xl": "48px", "space-md": "16px", "space-sm": "8px", "gutter": "24px", "space-lg": "24px", "margin": "32px", "space-xl": "32px"}, "fontFamily": {"headline-lg": ["Inter"], "body-sm": ["Inter"], "label-lg": ["Inter"], "body-md": ["Inter"], "headline-sm": ["Inter"], "label-sm": ["Inter"], "display-lg-mobile": ["Inter"], "display-lg": ["Inter"], "label-md": ["Inter"], "body-lg": ["Inter"], "headline-md": ["Inter"]}, "fontSize": {"headline-lg": ["28px", {"lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "600"}], "body-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}], "label-lg": ["14px", {"lineHeight": "20px", "fontWeight": "500"}], "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}], "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "600"}], "label-sm": ["10px", {"lineHeight": "14px", "letterSpacing": "0.05em", "fontWeight": "600"}], "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "display-lg": ["40px", {"lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "700"}], "label-md": ["12px", {"lineHeight": "16px", "fontWeight": "500"}], "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}], "headline-md": ["22px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]}}}};</script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/></head><body class="bg-surface font-body-md text-on-surface"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-space-xl pb-space-2xl"><div class="px-gutter mb-space-xl flex items-center gap-3"><img alt="ExpenseTracker Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDB-5y_HebDI44DdgQDeEb_Zs4arviwps35pPXyYjYyX8bR2d6l5jtQ8eVwC2WV7wfB0rMiLIcvS30u35fkwl9v_rjiDnLZ67WdYH7lmYrDfAJmfy6i3BMIe3k1sfP0klEX-iZ5yFdUVMuB0uBLF_LdA8EljrtI1nbl5LZK4L09wg2Q1Vafiw8lqF20ItxecJfCbofkxjOc9aO6sG76uSr4Ce2JXqS0KICbqea-qPA"/><span class="font-headline-md text-primary">ExpenseTracker</span></div><nav class="flex-1 px-space-md space-y-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-medium rounded-lg"><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#"><span class="material-symbols-outlined mr-space-md">dashboard</span>Dashboard</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="add-income" href="#"><span class="material-symbols-outlined mr-space-md">add_circle</span>Add Income</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="add-expenses" href="#"><span class="material-symbols-outlined mr-space-md">remove_circle</span>Add Expenses</a><a aria-current="page" class="flex items-center px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-medium rounded-lg" data-path="transaction-history" href="#"><span class="material-symbols-outlined mr-space-md">receipt_long</span>Transaction History</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="budget-planner" href="#"><span class="material-symbols-outlined mr-space-md">pie_chart</span>Budget Planner</a><a class="flex items-center px-space-md py-space-sm rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="reports" href="#"><span class="material-symbols-outlined mr-space-md">analytics</span>Reports</a></nav></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-40 flex items-center justify-between px-gutter"><div class="flex items-center gap-space-lg text-body-sm text-on-surface-variant"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">account_balance_wallet</span><span>Net Worth: <strong>$124,500</strong></span></div><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-secondary text-[18px]">trending_up</span><span>Monthly Savings: <strong>$3,200</strong></span></div></div><div class="flex items-center gap-space-md"><span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-on-surface">notifications</span><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="relative pt-16 bg-surface min-h-screen px-gutter py-space-xl"><div class="flex flex-col w-full pb-space-2xl">
+<!-- Top Banner / Header Area -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div>
+<div class="flex items-center gap-space-xs text-label-sm uppercase tracking-wider text-primary mb-space-xs">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+<span>Ledger & Records</span>
+</div>
+<h1 class="font-headline-lg text-on-surface">Transaction History</h1>
+<p class="font-body-md text-on-surface-variant mt-1">Search, filter, and manage all incoming and outgoing financial activity.</p>
+</div>
+<div class="flex items-center gap-space-md">
+<button class="flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-lg transition-all shadow-sm" onclick="alert('Exporting CSV...')">
+<span class="material-symbols-outlined text-[18px]">download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-space-xs bg-surface-container hover:bg-surface-container-high text-on-surface px-space-md py-space-sm rounded-lg font-label-lg transition-all shadow-sm" onclick="alert('Opening Print View...')">
+<span class="material-symbols-outlined text-[18px]">print</span>
+<span>Print Statement</span>
+</button>
+</div>
+</div>
+<!-- Filter & Search Controls Bar -->
+<div class="bg-surface-container-low rounded-xl p-space-lg shadow-sm mb-space-xl flex flex-col gap-space-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md">
+<!-- Search Input -->
+<div class="relative md:col-span-1">
+<span class="absolute inset-y-0 left-0 flex items-center pl-space-md pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="w-full bg-surface text-on-surface placeholder:text-outline text-body-md pl-11 pr-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary transition-all shadow-sm" id="searchInput" placeholder="Search merchant, notes..." type="text"/>
+</div>
+<!-- Category Filter -->
+<div class="relative">
+<select class="w-full bg-surface text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary transition-all shadow-sm appearance-none cursor-pointer" id="categoryFilter">
+<option value="">All Categories</option>
+<option value="Salary">Salary & Income</option>
+<option value="Groceries">Groceries</option>
+<option value="Utilities">Utilities</option>
+<option value="Entertainment">Entertainment</option>
+<option value="Investment">Investment</option>
+<option value="Dining">Dining Out</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-space-md pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<!-- Type Filter -->
+<div class="relative">
+<select class="w-full bg-surface text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary transition-all shadow-sm appearance-none cursor-pointer" id="typeFilter">
+<option value="">All Types (Income & Expense)</option>
+<option value="Income">Income Only</option>
+<option value="Expense">Expense Only</option>
+</select>
+<span class="absolute inset-y-0 right-0 flex items-center pr-space-md pointer-events-none text-outline">
+<span class="material-symbols-outlined text-[20px]">expand_more</span>
+</span>
+</div>
+<!-- Date Range Picker -->
+<div class="relative">
+<input class="w-full bg-surface text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary transition-all shadow-sm cursor-pointer" id="dateFilter" type="date"/>
+</div>
+</div>
+<!-- Active Filters & Quick Resets -->
+<div class="flex items-center justify-between pt-space-xs text-body-sm text-on-surface-variant">
+<div class="flex items-center gap-space-sm flex-wrap" id="activeFilterTags">
+<span>Showing <strong class="text-on-surface" id="visibleCount">10</strong> of <strong class="text-on-surface">48</strong> entries</span>
+</div>
+<button class="text-primary hover:underline font-label-md" onclick="resetFilters()">Reset all filters</button>
+</div>
+</div>
+<!-- Transactions Table Container -->
+<div class="bg-surface-container-low rounded-xl shadow-md overflow-hidden mb-space-xl">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse" id="transactionsTable">
+<thead>
+<tr class="bg-surface-container-high/60 text-on-surface-variant font-label-md uppercase tracking-wider text-[11px]">
+<th class="py-space-md px-space-lg">Transaction Details</th>
+<th class="py-space-md px-space-lg">Category</th>
+<th class="py-space-md px-space-lg">Date</th>
+<th class="py-space-md px-space-lg text-right">Amount</th>
+<th class="py-space-md px-space-lg text-center">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-container text-body-md text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="Salary" data-date="2023-10-24" data-type="Income">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined">work</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">Acme Corp Payroll</div>
+<div class="text-body-sm text-on-surface-variant">Direct Deposit - Bi-weekly</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-primary-fixed text-on-primary-fixed">Salary</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Oct 24, 2023</td>
+<td class="py-space-md px-space-lg text-right font-headline-sm text-primary">+$4,250.00</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Acme Corp Payroll', '4250.00', 'Salary', 'Income')" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-on-surface-variant hover:text-error transition-all" onclick="deleteRow(this)" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="Groceries" data-date="2023-10-23" data-type="Expense">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined">shopping_cart</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">Whole Foods Market</div>
+<div class="text-body-sm text-on-surface-variant">Weekly organic produce & supplies</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-surface-container-highest text-on-surface-variant">Groceries</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Oct 23, 2023</td>
+<td class="py-space-md px-space-lg text-right font-headline-sm text-error">-$142.50</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Whole Foods Market', '142.50', 'Groceries', 'Expense')" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-on-surface-variant hover:text-error transition-all" onclick="deleteRow(this)" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="Utilities" data-date="2023-10-21" data-type="Expense">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined">bolt</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">City Power & Light</div>
+<div class="text-body-sm text-on-surface-variant">Electricity bill September cycle</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-surface-container-highest text-on-surface-variant">Utilities</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Oct 21, 2023</td>
+<td class="py-space-md px-space-lg text-right font-headline-sm text-error">-$88.20</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('City Power & Light', '88.20', 'Utilities', 'Expense')" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-on-surface-variant hover:text-error transition-all" onclick="deleteRow(this)" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="Investment" data-date="2023-10-19" data-type="Income">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0">
+<span class="material-symbols-outlined">trending_up</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">Vanguard Dividend Yield</div>
+<div class="text-body-sm text-on-surface-variant">Quarterly portfolio distribution</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-primary-fixed text-on-primary-fixed">Investment</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Oct 19, 2023</td>
+<td class="py-space-md px-space-lg text-right font-headline-sm text-primary">+$340.00</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Vanguard Dividend Yield', '340.00', 'Investment', 'Income')" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-on-surface-variant hover:text-error transition-all" onclick="deleteRow(this)" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="Dining" data-date="2023-10-18" data-type="Expense">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined">restaurant</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">Le Bernardin Restaurant</div>
+<div class="text-body-sm text-on-surface-variant">Client appreciation dinner</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-surface-container-highest text-on-surface-variant">Dining</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Oct 18, 2023</td>
+<td class="py-space-md px-space-lg text-right font-headline-sm text-error">-$265.00</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('Le Bernardin Restaurant', '265.00', 'Dining', 'Expense')" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-on-surface-variant hover:text-error transition-all" onclick="deleteRow(this)" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container transition-colors group" data-category="Entertainment" data-date="2023-10-15" data-type="Expense">
+<td class="py-space-md px-space-lg">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-full bg-error-container flex items-center justify-center text-on-error-container shrink-0">
+<span class="material-symbols-outlined">movie</span>
+</div>
+<div>
+<div class="font-headline-sm text-on-surface">IMAX Cinema & Snacks</div>
+<div class="text-body-sm text-on-surface-variant">Weekend movie screening</div>
+</div>
+</div>
+</td>
+<td class="py-space-md px-space-lg">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-label-sm bg-surface-container-highest text-on-surface-variant">Entertainment</span>
+</td>
+<td class="py-space-md px-space-lg text-on-surface-variant">Oct 15, 2023</td>
+<td class="py-space-md px-space-lg text-right font-headline-sm text-error">-$45.00</td>
+<td class="py-space-md px-space-lg text-center">
+<div class="flex items-center justify-center gap-space-xs">
+<button class="p-2 hover:bg-surface-container-high rounded-lg text-on-surface-variant hover:text-on-surface transition-all" onclick="openEditModal('IMAX Cinema & Snacks', '45.00', 'Entertainment', 'Expense')" title="Edit">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+<button class="p-2 hover:bg-error-container rounded-lg text-on-surface-variant hover:text-error transition-all" onclick="deleteRow(this)" title="Delete">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination Footer -->
+<div class="flex flex-col sm:flex-row items-center justify-between p-space-lg bg-surface-container-low/80 gap-space-md border-t border-surface-container">
+<div class="flex items-center gap-space-md text-body-sm text-on-surface-variant">
+<span>Rows per page:</span>
+<select class="bg-surface text-on-surface px-space-sm py-1 rounded-lg outline-none border-none shadow-sm cursor-pointer">
+<option>10</option>
+<option>25</option>
+<option>50</option>
+</select>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-space-sm rounded-lg bg-surface hover:bg-surface-container-high text-on-surface text-label-md disabled:opacity-40 transition-all shadow-sm" disabled="">
+          Previous
+        </button>
+<button class="w-9 h-9 rounded-lg bg-primary text-on-primary font-label-md flex items-center justify-center shadow-sm">1</button>
+<button class="w-9 h-9 rounded-lg bg-surface hover:bg-surface-container-high text-on-surface font-label-md flex items-center justify-center transition-all shadow-sm">2</button>
+<button class="w-9 h-9 rounded-lg bg-surface hover:bg-surface-container-high text-on-surface font-label-md flex items-center justify-center transition-all shadow-sm">3</button>
+<button class="w-9 h-9 rounded-lg bg-surface hover:bg-surface-container-high text-on-surface font-label-md flex items-center justify-center transition-all shadow-sm">4</button>
+<button class="px-space-md py-space-sm rounded-lg bg-surface hover:bg-surface-container-high text-on-surface text-label-md transition-all shadow-sm">
+          Next
+        </button>
+</div>
+</div>
+</div>
+<!-- Edit Transaction Modal (Hidden by default) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 flex items-center justify-center hidden" id="editModal">
+<div class="bg-surface rounded-xl p-space-2xl w-full max-w-lg shadow-2xl relative">
+<div class="flex items-center justify-between mb-space-lg">
+<h3 class="font-headline-md text-on-surface">Edit Transaction</h3>
+<button class="p-2 hover:bg-surface-container rounded-lg text-on-surface-variant" onclick="closeEditModal()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<form class="space-y-space-md" id="editForm" onsubmit="saveEdit(event)">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Merchant / Title</label>
+<input class="w-full bg-surface-container text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" id="editTitle" required="" type="text"/>
+</div>
+<div class="grid grid-cols-2 gap-space-md">
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Amount ($)</label>
+<input class="w-full bg-surface-container text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" id="editAmount" required="" step="0.01" type="number"/>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Type</label>
+<select class="w-full bg-surface-container text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" id="editType">
+<option value="Income">Income</option>
+<option value="Expense">Expense</option>
+</select>
+</div>
+</div>
+<div>
+<label class="block text-label-md text-on-surface-variant mb-space-xs">Category</label>
+<select class="w-full bg-surface-container text-on-surface text-body-md px-space-md py-space-sm rounded-lg outline-none focus:ring-2 focus:ring-primary" id="editCategory">
+<option value="Salary">Salary</option>
+<option value="Groceries">Groceries</option>
+<option value="Utilities">Utilities</option>
+<option value="Investment">Investment</option>
+<option value="Dining">Dining</option>
+<option value="Entertainment">Entertainment</option>
+</select>
+</div>
+<div class="flex items-center justify-end gap-space-md pt-space-md">
+<button class="px-space-md py-space-sm rounded-lg bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg transition-all" onclick="closeEditModal()" type="button">Cancel</button>
+<button class="px-space-xl py-space-sm rounded-lg bg-primary-container text-on-primary-container font-label-lg transition-all shadow-sm" type="submit">Save Changes</button>
+</div>
+</form>
+</div>
+</div>
+<!-- Client-side Search & Filter Script -->
+<script>
+    const searchInput = document.getElementById('searchInput');
+    const categoryFilter = document.getElementById('categoryFilter');
+    const typeFilter = document.getElementById('typeFilter');
+    const dateFilter = document.getElementById('dateFilter');
+    const tableRows = document.querySelectorAll('#transactionsTable tbody tr');
+    const visibleCountEl = document.getElementById('visibleCount');
+
+    function filterTable() {
+      const query = searchInput.value.toLowerCase();
+      const selectedCategory = categoryFilter.value;
+      const selectedType = typeFilter.value;
+      const selectedDate = dateFilter.value;
+
+      let visibleCount = 0;
+
+      tableRows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        const category = row.getAttribute('data-category');
+        const type = row.getAttribute('data-type');
+        const date = row.getAttribute('data-date');
+
+        const matchesQuery = text.includes(query);
+        const matchesCategory = !selectedCategory || category === selectedCategory;
+        const matchesType = !selectedType || type === selectedType;
+        const matchesDate = !selectedDate || date === selectedDate;
+
+        if (matchesQuery && matchesCategory && matchesType && matchesDate) {
+          row.style.display = '';
+          visibleCount++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      visibleCountEl.innerText = visibleCount;
+    }
+
+    searchInput.addEventListener('input', filterTable);
+    categoryFilter.addEventListener('change', filterTable);
+    typeFilter.addEventListener('change', filterTable);
+    dateFilter.addEventListener('change', filterTable);
+
+    function resetFilters() {
+      searchInput.value = '';
+      categoryFilter.value = '';
+      typeFilter.value = '';
+      dateFilter.value = '';
+      filterTable();
+    }
+
+    function deleteRow(btn) {
+      if (confirm('Are you sure you want to delete this transaction record?')) {
+        const row = btn.closest('tr');
+        row.remove();
+        filterTable();
+      }
+    }
+
+    let currentRow = null;
+    function openEditModal(title, amount, category, type) {
+      document.getElementById('editTitle').value = title;
+      document.getElementById('editAmount').value = amount;
+      document.getElementById('editCategory').value = category;
+      document.getElementById('editType').value = type;
+      document.getElementById('editModal').classList.remove('hidden');
+    }
+
+    function closeEditModal() {
+      document.getElementById('editModal').classList.add('hidden');
+    }
+
+    function saveEdit(e) {
+      e.preventDefault();
+      alert('Transaction updated successfully!');
+      closeEditModal();
+    }
+  </script>
+</div></main></div></body></html>
